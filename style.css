@@ -10,7 +10,7 @@
   --z-tooltip: 10;
   --z-fixed: 100;
 }
-@media screen and (min-width: 1150px) {
+@media screen and (min-width: 1000px) {
     :root {
       --normal-font-size: 1rem;
     }
@@ -56,7 +56,7 @@ body {
   cursor: pointer;
 }
 /*Navigation for mobile devices*/
-@media screen and (max-width: 1150px) {
+@media screen and (max-width: 1000px) {
   .nav_menu {
     position: fixed;
     left: 0;
@@ -87,6 +87,38 @@ body {
   font-weight: var(--font-medium);
   display: inline-flex;
   align-items: center;
+}
+.nav_link i {
+  font-size: 2rem;
+  position: absolute;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity .4s, visibility .4s;
+}
+.nav_link span{
+  position: relative;
+  transition: margin .4s;
+}
+.nav_link span::after{
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0;
+  height: 2px;
+  background-color: var(--white-color);
+  transition: width .4s ease-out;
+}
+.nav_link:hover span {
+  margin-left: 2rem;
+}
+.nav_link:hover i {
+  opacity: 0.5;
+  visibility: visible;
+}
+.nav_link:hover span::after{
+  width: 100%;
+  opacity: 0.5;
 }
 div p#main-content {
   width: 75%;
