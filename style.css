@@ -1,6 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500&display=swap");
 :root {
-  --header-height: 3.5rem;
+  --header-height: 1.5rem;
   --white-color: hsl(0, 0%, 100%);
   --black-color: hsl(0, 0%, 0%);
   --body-font: "Montserrat Alternates", sans-serif;
@@ -15,6 +15,15 @@
     --normal-font-size: 1rem;
   }
 }
+/*Profile photo*/
+img[alt="Abel_Kevin"] {
+  width: 300px;
+  float: right;
+  position: absolute;
+  border-radius: 50%;
+  border-style: ridge;
+  border-color: grey;
+}
 
 * {
   box-sizing: border-box;
@@ -27,6 +36,8 @@ html {
 body {
   font-family: var(--body-font);
   font-size: var(--normal-font-size);
+  padding-top: calc(var(--header-height) + 2rem);
+  padding-left: 1rem;
 }
 
 .header {
@@ -47,6 +58,10 @@ body {
 .nav_logo {
   color: var(--white-color);
   font-weight: var(--font-medium);
+}
+.nav_logo i {
+  font-size: 2.5rem;
+  margin-right: auto;
 }
 .nav_close,
 .nav_toggle {
@@ -178,20 +193,20 @@ a {
   .container {
     margin-inline: auto;
   }
-  .nav{
+  .nav {
     height: calc(var(--header-height) + 2rem);
   }
   .nav_toggle,
   .nav_close {
     display: none;
   }
-  .nav_link{
+  .nav_link {
     font-size: var(--normal-font-size);
   }
-  .nav_link i{
+  .nav_link i {
     font-size: 1.5rem;
   }
-  .nav_list{
+  .nav_list {
     flex-direction: row;
     column-gap: 3.5rem;
   }
