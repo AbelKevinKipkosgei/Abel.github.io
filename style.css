@@ -3,16 +3,10 @@ body {
   background-color: rgb(235, 232, 232);
   font-family: "Montserrat Alternates", sans-serif;
 }
-nav.top-nav {
-  display: flex;
-  flex-direction: row;
-}
-nav.top-nav ul {
+.nav_list {
   list-style-type: none;
-}
-nav.social ul {
-  list-style-type: none;
-  display: flex;
+  padding: 0;
+  margin: 0;
 }
 div p#main-content {
   width: 75%;
