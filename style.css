@@ -1,7 +1,42 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500&display=swap");
+:root {
+  --header-height: 3.5rem;
+  --white-color: hsl(0,0%,100%);
+  --black-color: hsl(0,0%,0%);
+  --body-font: "Montserrat Alternates", sans-serif;
+  --h1-font-size: .938rem;
+  --font-regular: 400;
+  --font-medium: 500;
+  --z-tooltip: 10;
+  --z-fixed: 100;
+}
+@media screen and (min-width: 1150px) {
+    :root {
+      --normal-font-size: 1rem;
+    }
+  }
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+html {
+  scroll-behavior: smooth;
+}
 body {
-  background-color: rgb(235, 232, 232);
-  font-family: "Montserrat Alternates", sans-serif;
+  font-family: var(--body-font);
+  font-size: var(--normal-font-size);
+}
+
+
+.header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: black;
+  z-index:var(--z-fixed)
 }
 .nav_list {
   list-style-type: none;
@@ -10,4 +45,7 @@ body {
 }
 div p#main-content {
   width: 75%;
+}
+a {
+  text-decoration: none;
 }
