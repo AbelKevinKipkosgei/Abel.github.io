@@ -1,6 +1,6 @@
-const navMenu = document.getElementById("nav_menu"),
-        navToggle = document.getElementById("nav_toggle"),
-        navClose = document.getElementById("nav_close");
+const navMenu = document.getElementById("nav-menu"),
+        navToggle = document.getElementById("nav-toggle"),
+        navClose = document.getElementById("nav-close");
 
 //Menu show
 if(navToggle){

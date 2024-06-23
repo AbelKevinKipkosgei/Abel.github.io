@@ -1,20 +1,20 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@400;500&display=swap");
 :root {
   --header-height: 3.5rem;
-  --white-color: hsl(0,0%,100%);
-  --black-color: hsl(0,0%,0%);
+  --white-color: hsl(0, 0%, 100%);
+  --black-color: hsl(0, 0%, 0%);
   --body-font: "Montserrat Alternates", sans-serif;
-  --h1-font-size: .938rem;
+  --h1-font-size: 0.938rem;
   --font-regular: 400;
   --font-medium: 500;
   --z-tooltip: 10;
   --z-fixed: 100;
 }
 @media screen and (min-width: 1000px) {
-    :root {
-      --normal-font-size: 1rem;
-    }
+  :root {
+    --normal-font-size: 1rem;
   }
+}
 
 * {
   box-sizing: border-box;
@@ -29,14 +29,13 @@ body {
   font-size: var(--normal-font-size);
 }
 
-
 .header {
   position: fixed;
   width: 100%;
   top: 0;
   left: 0;
   background-color: black;
-  z-index:var(--z-fixed)
+  z-index: var(--z-fixed);
 }
 .nav {
   position: relative;
@@ -49,7 +48,8 @@ body {
   color: var(--white-color);
   font-weight: var(--font-medium);
 }
-.nav_close, .nav_toggle {
+.nav_close,
+.nav_toggle {
   display: flex;
   color: var(--white-color);
   font-size: 1.5rem;
@@ -68,7 +68,24 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    transition: left .4s;
+    transition: left 0.4s;
+  }
+  .nav_item {
+    transform: translateX(-150px);
+    visibility: hidden;
+    transition: transform 0.4s ease-out, visibility 0.4s;
+  }
+  .nav_item:nth-child(1) {
+    transition-delay: 0.1s;
+  }
+  .nav_item:nth-child(2) {
+    transition-delay: 0.2s;
+  }
+  .nav_item:nth-child(3) {
+    transition-delay: 0.3s;
+  }
+  .nav_item:nth-child(4) {
+    transition-delay: 0.4s;
   }
 }
 .nav_list {
@@ -87,43 +104,43 @@ body {
   font-weight: var(--font-medium);
   display: inline-flex;
   align-items: center;
+  transition: opacity 0.4s;
 }
 .nav_link i {
   font-size: 2rem;
   position: absolute;
   opacity: 0;
   visibility: hidden;
-  transition: opacity .4s, visibility .4s;
+  transition: opacity 0.4s, visibility 0.4s;
 }
-.nav_link span{
+.nav_link span {
   position: relative;
-  transition: margin .4s;
+  transition: margin 0.4s;
 }
-.nav_link span::after{
-  content: '';
+.nav_link span::after {
+  content: "";
   position: absolute;
   left: 0;
   bottom: -6px;
   width: 0;
   height: 2px;
   background-color: var(--white-color);
-  transition: width .4s ease-out;
+  transition: width 0.4s ease-out;
 }
 .nav_link:hover span {
   margin-left: 2rem;
 }
 .nav_link:hover i {
-  opacity: 0.5;
+  opacity: 1;
   visibility: visible;
 }
-.nav_link:hover span::after{
+.nav_link:hover span::after {
   width: 100%;
-  opacity: 0.5;
 }
-.nav_list:has(.nav_link:hover) .nav_link:not(:hover){
+.nav_list:has(.nav_link:hover) .nav_link:not(:hover) {
   opacity: 0.4;
 }
-.nav_close{
+.nav_close {
   position: absolute;
   top: 1rem;
   right: 1.5rem;
@@ -152,24 +169,35 @@ a {
 .show-menu {
   left: 0;
 }
-.nav_item {
-  transform: translateX(-150px);
-  visibility: hidden;
-  transition: transform .4s ease-out, visibility .4s;
-}
-.nav_item:nth-child(1){
-  transition-delay: .1s;
-}
-.nav_item:nth-child(2){
-  transition-delay: .2s;
-}
-.nav_item:nth-child(3){
-  transition-delay: .3s;
-}
-.nav_item:nth-child(4){
-  transition-delay: .4s;
-}
 .show-menu .nav_item {
   visibility: visible;
   transform: translateX(0);
+}
+/*For large devices*/
+@media screen and (min-width: 1000px) {
+  .container {
+    margin-inline: auto;
+  }
+  .nav{
+    height: calc(var(--header-height) + 2rem);
+  }
+  .nav_toggle,
+  .nav_close {
+    display: none;
+  }
+  .nav_link{
+    font-size: var(--normal-font-size);
+  }
+  .nav_link i{
+    font-size: 1.5rem;
+  }
+  .nav_list{
+    flex-direction: row;
+    column-gap: 3.5rem;
+  }
+  .nav_menu {
+    display: flex;
+    align-items: center;
+    column-gap: 3.5rem;
+  }
 }
